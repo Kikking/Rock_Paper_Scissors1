@@ -7,6 +7,42 @@
     <title>Document</title>
 </head>
 <body>
-    
+ <script>
+     function computerPlays(){
+        let randomSelect= Math.floor(Math.random()*3);
+        
+        if (randomSelect===0) { 
+            return "ROCK"
+        }
+        else if (randomSelect===1){
+            return "PAPER"
+        }
+        else if (randomSelect===2) { 
+            return "SCISSORS"
+        }
+    };
+ const playerSelect=  prompt("Choose your Weapon, Julia.");
+    const computerSelect= computerPlays();
+
+function singleRound(computerSelect , playerSelect){
+ 
+    if ((computerSelect=="ROCK" && playerSelect.toUpperCase()=="SCISSORS")
+    ||(computerSelect=="PAPER" && playerSelect.toUpperCase()=="ROCK")
+    ||(computerSelect=="SCISSORS" && playerSelect.toUpperCase()=="PAPER")){
+        return("Julia Smells!")
+    }
+    else if (computerSelect==playerSelect.toUpperCase()) {
+        return ("It's a tie, so basically you suck.")
+    }
+    else {
+        return("Ok... You got Lucky.")
+    }
+};
+
+console.log(singleRound(computerSelect , playerSelect))
+;
+
+     
+ </script>   
 </body>
 </html>
