@@ -21,12 +21,18 @@
             return "SCISSORS"
         }
     };
- const playerSelect=  prompt("Choose your Weapon, Julia.");
-    const computerSelect= computerPlays();
+     let playerSelect=  prompt("Choose your Weapon, Julia.");
+    let computerSelect= computerPlays();
 
 function singleRound(computerSelect , playerSelect){
- 
-    if ((computerSelect=="ROCK" && playerSelect.toUpperCase()=="SCISSORS")
+    
+    if ((playerSelect.toUpperCase()!= "ROCK")
+     &&( playerSelect.toUpperCase()!= "PAPER") 
+     &&(playerSelect.toUpperCase()!= "SCISSORS")){
+        return("I  knew you were bad at spelling, but not this bad. ")
+     }
+     
+    else if ((computerSelect=="ROCK" && playerSelect.toUpperCase()=="SCISSORS")
     ||(computerSelect=="PAPER" && playerSelect.toUpperCase()=="ROCK")
     ||(computerSelect=="SCISSORS" && playerSelect.toUpperCase()=="PAPER")){
         return("Julia Smells!")
@@ -34,15 +40,33 @@ function singleRound(computerSelect , playerSelect){
     else if (computerSelect==playerSelect.toUpperCase()) {
         return ("It's a tie, so basically you suck.")
     }
+    
+   
     else {
         return("Ok... You got Lucky.")
     }
 };
-
-console.log(singleRound(computerSelect , playerSelect))
-;
-
-     
+function game(){
+    playerSelect=  prompt("Choose your Weapon, Julia.");
+ computerSelect= computerPlays();
+    console.log(singleRound(computerSelect , playerSelect));
+ playerSelect=  prompt("Choose your Weapon, Julia.");
+ computerSelect= computerPlays();
+ console.log(singleRound(computerSelect , playerSelect));
+ playerSelect=  prompt("Choose your Weapon, Julia.");
+ computerSelect= computerPlays();
+ console.log(singleRound(computerSelect , playerSelect));
+ playerSelect=  prompt("Choose your Weapon, Julia.");
+ computerSelect= computerPlays();
+ console.log(singleRound(computerSelect , playerSelect));
+ playerSelect=  prompt("Choose your Weapon, Julia.");
+ computerSelect= computerPlays();
+ console.log(singleRound(computerSelect , playerSelect));
+ playerSelect=  prompt("Choose your Weapon, Julia.");
+ computerSelect= computerPlays();
+ console.log(singleRound(computerSelect , playerSelect));
+};
+  console.log(game())   
  </script>   
 </body>
 </html>
