@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Julia's Test</title>
 </head>
 <body>
  <script>
@@ -21,11 +21,16 @@
             return "SCISSORS"
         }
     };
-     let playerSelect=  prompt("Choose your Weapon, Julia.");
-    let computerSelect= computerPlays();
+     let playerSelect//=  prompt("Choose your Weapon, Julia.");
+    let computerSelect//= computerPlays();
+    let cpu=0;
+    let cpuValue;
+    let player=0;
+    let playerValue;
 
 function singleRound(computerSelect , playerSelect){
-    
+   
+
     if ((playerSelect.toUpperCase()!= "ROCK")
      &&( playerSelect.toUpperCase()!= "PAPER") 
      &&(playerSelect.toUpperCase()!= "SCISSORS")){
@@ -35,36 +40,64 @@ function singleRound(computerSelect , playerSelect){
     else if ((computerSelect=="ROCK" && playerSelect.toUpperCase()=="SCISSORS")
     ||(computerSelect=="PAPER" && playerSelect.toUpperCase()=="ROCK")
     ||(computerSelect=="SCISSORS" && playerSelect.toUpperCase()=="PAPER")){
-        return("Julia Smells!")
+        
+    cpuValue="True";
+        return("Julia Smells!   Computer:" + (cpu+=1) +"     Julia:" +player);
+       
     }
     else if (computerSelect==playerSelect.toUpperCase()) {
-        return ("It's a tie, so basically you suck.")
+        return ("It's a tie, not looking good for you.")
     }
-    
    
     else {
-        return("Ok... You got Lucky.")
-    }
+        return("Ok... You got Lucky.     Computer:" + cpu +"     Julia:" +(player+=1)   )
+    };
+    
 };
+
+
 function game(){
+ alert("Best of 5 rounds. Are you marriage material?")
     playerSelect=  prompt("Choose your Weapon, Julia.");
  computerSelect= computerPlays();
     console.log(singleRound(computerSelect , playerSelect));
+  /*  if(cpuValue=="True"){
+        console.log("SCORE   Computer:"+ cpu++ +"Julia:"+player);
+      
+        
+}
+else if (playerValue="True"){
+    console.log("SCORE  Computer:"+ cpu +"Julia:"+player++)
+};*/
  playerSelect=  prompt("Choose your Weapon, Julia.");
  computerSelect= computerPlays();
  console.log(singleRound(computerSelect , playerSelect));
+ 
  playerSelect=  prompt("Choose your Weapon, Julia.");
  computerSelect= computerPlays();
  console.log(singleRound(computerSelect , playerSelect));
+ 
  playerSelect=  prompt("Choose your Weapon, Julia.");
  computerSelect= computerPlays();
  console.log(singleRound(computerSelect , playerSelect));
+
  playerSelect=  prompt("Choose your Weapon, Julia.");
  computerSelect= computerPlays();
  console.log(singleRound(computerSelect , playerSelect));
+
  playerSelect=  prompt("Choose your Weapon, Julia.");
  computerSelect= computerPlays();
  console.log(singleRound(computerSelect , playerSelect));
+
+ if(player>cpu){
+     alert(" Julia Wins. You clearly cheated.");
+ }
+else if(cpu>player){
+    alert( "You lost to a computer. Breakup imminent.");
+}
+else {
+    alert("You tied? Against a computer? Take this as a loss and go sit in a corner with Cathy.");
+}
 };
   console.log(game())   
  </script>   
